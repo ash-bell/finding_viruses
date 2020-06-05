@@ -4,11 +4,6 @@ require(Biostrings)
 require(parallel)
 require(VirFinder)
 
-#example
-#inFaFile <- system.file("data", "tara_host.fa", package="VirFinder")
-#vir.pred <- parVF.pred(inFaFile, cores=8)
-
-
 parVF.run <- function (seqFaIn)
 {
     seqFa <- strsplit(x=as.character(seqFaIn),split="",fixed=T)[[1]]
@@ -65,5 +60,5 @@ parVF.pred <- function(inFaFile, cores=8) {
 environment(parVF.pred) <- asNamespace('VirFinder')
 
 predResult <- parVF.pred("cat123456.fasta", cores=8)
-virfinder <- subset(predResults, pvalue <= 0.05 & length >= 1000 & score >= 0.7)
-write.csv(virfinder, "VirFinder_cat123456.csv", row.names = FALSE)
+virfinder = subset(predResult, pvalue <= 0.05 & score >= 0.7 & length >= 1000)
+write.csv(virfinder, "VirFinder_cat123456_trm.csv", row.names = FALSE)
