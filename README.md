@@ -6,6 +6,7 @@ Before you start:
 *   Have [VirSorter](https://github.com/simroux/VirSorter) installed
 *   Have [VirFinder](https://github.com/jessieren/VirFinder) installed
 *   Have [vContact2](https://bitbucket.org/MAVERICLab/vcontact2) installed
+*   If you are using converter.py you need [Biopython](https://biopython.org/) `conda install -c anaconda biopython`, sys and os (come installed default in python I **think**)
 
 Run VirSorter on your sequences with the ViromeDB instead of refseqdb
 
